@@ -63,7 +63,6 @@ now here:
 
 now this simply explains the concept of -> O(n)
 
-
 - O(n²) — Quadratic Time
 in this big O concept this whole process usually happens with the involvement of the nested loops.
 
