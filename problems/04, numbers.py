@@ -99,6 +99,116 @@
 # print(find([5,7,2,3,9,8,4]))
 
 
+## removing duplicates from array
+## 1
+# def duplicate(num):
+#     nums = []
+#     for val in num:
+#         found = False
+#         for v in nums:
+#             if v == val:
+#                 found = True
+#         if found == False:
+#             nums.append(val)
+#     return nums
+
+# print(duplicate([1,2,2,3,4,4,5]))
+
+## 2
+# def duplicate(num):
+#     result = []
+#     for val in num:
+#         if val not in result:
+#             result.append(val)
+#     return result
+ 
+# print(duplicate([1,2,2,3,4,4,5]))
+
+
+## finding the missing number
+## 1
+# def missing(nums):
+#     val = 1
+#     while True:
+#        count = 0
+#        for v in nums:
+#           if v == val:
+#              count = count + 1
+#           if count == 0:
+#             return val
+#        val += 1
+
+# print(missing([2,3,4,5,6,8,9]))
+
+## 2 
+# def missing(nums):
+#     largest = nums[0]
+#     for val in nums:
+#        if val > largest:
+#           largest = val
+#     for v in range(1, largest + 1):
+#        if v not in nums:
+#           return v
+
+# print(missing([2,3,4,5,6,8,9]))
+
+
+## finding the pairs that have sum same as target
+# ## 1
+# def pairs(num, target):
+#     val = 0
+#     while val < len(num):
+#         v = 0
+#         while v < len(num):
+#             if val != v:
+#               if num[val] + num[v] == target:
+#                 print(num[val], num[v])
+#             v += 1
+#         val += 1
+
+# pairs([2,4,3,5,7,8], 9)
+
+# ##2
+# def pairs(num, target):
+#     for val in range(len(num)):
+#        for v in range(val + 1, len(num)):
+#           if num[val] + num[v] == target:
+#             print(num[val], num[v])
+
+# print(pairs([2,4,3,5,7,8], 9))
+
+
+## rotating the array by one position
+## 1
+# def rotate(nums):
+#     num = []
+#     last = nums[len(nums)]
+#     num.append(last)
+#     val = 0
+#     while val < len(nums):
+#         num.append(nums[val])
+#         val += 1
+#     return num
+#
+# print(rotate([4,2,5,9,7]))
+
+## 2
+# def rotate(nums):
+#     last = nums[len(nums) - 1]
+#     num = len(nums) - 1
+#     while num > 0:
+#         nums[num] = nums[num - 1]
+#         num -= 1
+#     nums[0] = last
+#     return nums
+
+# print(rotate([4,2,5,9,7]))
+
+        
+            
+            
+
+
 
 
 
