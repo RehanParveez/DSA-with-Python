@@ -204,6 +204,135 @@
 
 # print(rotate([4,2,5,9,7]))
 
+
+# Q: Problem: Frequency of number
+## 1
+# def frequency(nums):
+#     for val in nums:
+#         count = 0
+#         for v in nums:
+#             if v == val:
+#               count += 1
+#         print(val, count)
+
+# frequency([1,2,2,3,3,3])
+
+## 2
+# def frequency(nums):
+#     check = []
+#     for val in nums:
+#       if val not in check:
+#           count = 0
+#           for v in nums:
+#               if v == val:
+#                  count += 1
+#           print(val, count)
+#           check.append(val)
+# frequency([1,2,2,3,3,3])
+
+
+## Q: Problem: check if two arrays are equal
+# ## 1
+# def equal(r, p):
+#     if len(r) != len(p):
+#         return False
+#     d = 0
+#     while d < len(r):
+#       if r[d] != p[d]:
+#           return False
+#       d += 1
+#     return True
+
+# print(equal([2,3,5,4], [2,3,5,4]))
+
+# ## 2
+# def equal(r, p):
+#     if len(r) != len(p):
+#       return False
+#     for d in range(len(r)):
+#       if r[d] != p[d]:
+#         return False
+#     return True
+
+# print(equal([2,3,5,4], [2,3,5,4]))
+
+
+## Q: Problem: first repeating element
+# ## 1
+# def repeat(nums):
+#     val = None
+#     for r in range(len(nums)):
+#       for p in range(r+1, len(nums)):
+#          if nums[r] == nums[p]:
+#             val = nums[r]
+#     return val
+
+# print(repeat([4,5,1,2,3,5,1]))
+
+# ## 2
+# def repeat(nums):
+#   for r in range(len(nums)):
+#      for p in range(r+1, len(nums)):
+#        if nums[r] == nums[p]:
+#          return nums[r]
+
+# print(repeat([4,5,1,2,3,5,1]))
+
+
+## Q: Problem: find common elements between two arrays
+# ## 1
+# def common(r, p):
+#     check = []
+#     for d in range(len(r)):
+#       for c in range(len(p)):
+#         if r[d] == p[c]:
+#           check.append(r[d])
+#     return check
+
+# print(common([5,2,6,3,4], [3,4,5,6,9]))
+
+# ## 2
+# def common(r, p):
+#     check = []
+#     for d in r:
+#       if d in p:
+#         check.append(d)
+#     return check
+
+# print(common([5,2,6,3,4], [3,4,5,6,9]))
+
+
+## Q: largest difference in an array
+## 1
+# def difference(num):
+#     big_diff = 0
+#     for n in range(len(num)-1):
+#        d = num[n+1] - num[n]
+#        if d > big_diff:
+#          big_diff = d
+#     return big_diff
+
+# print(difference([3,7,2,9,4]))
+
+# ## 2
+# def difference(num):
+#     big_diff = 0
+#     for r in range(len(num)):
+#       for p in range(len(num)):
+#         d = num[r] - num[p]
+#         if d < 0:
+#           d = -d
+#         if d > big_diff:
+#             big_diff = d
+#     return big_diff
+
+# print(difference([3,7,2,9,4]))
+
+
+
+
+
+
         
             
             
