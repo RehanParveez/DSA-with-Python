@@ -168,3 +168,64 @@ the hashing concept can be seen as:
 
 ## Collision concept in Hashing:
 
+# What is a Collision?
+The concept is like for example sometimes the two different keys to each other can produce the same index value.
+
+- as in this below given case here:
+
+hash('jiraffe') % 8 = 7
+hash('wolf') % 8 = 7
+
+now in this scenario both of the hash objects want to go inside the box which we are considering here as 7, so then this very situation is called a concept named as collision.
+
+Index: 0 1 2 3 4 5 6 7
+                     |
+                     ['jiraffe']
+                     ['wolf']
+
+# How collosions happens inside python:
+while working in python this problem is automatically solved by pyhon with the use of special methods/techniques which are:
+
+1. Chaining:
+now according to this method each box can store the multiple numbers with the use of a list or linked structure which are by the way some common data strucutres used in python alongside tuples, sets, and the dictionary.
+
+- now example of chaining:
+
+Box 7
+
+['jiraffe':5] -> ['wolf':10]
+
+so just like according to this example the multiple number of keys can exist in the same given box.
+
+2. Open Addressing:
+now according to this concept in python so instead of storing the multiple number of items in the same given box, now in this situation what python does it simply searches for the next empty psotion/slot where the item can be stored.
+
+now example of open addressing:
+
+Index: 0  1  2  3  4  5  6  7
+       [] [] [] [] [] [] [] ['jiraffe']
+
+now the thing is 'wolf' also wants the position of index 7 but it is full and it does not have any empty position inside it, so in this very case what python does it will check the next given index:
+
+for instance: Index 0 now if this index is -> empty then it will -> store the item here
+
+now:
+Index:  0      1  2  3  4  5  6  7
+       ['wolf']         ['jiraffe']
+
+so all of this is handeled automatically inside python.
+
+one key point:
+the question about how everything related to hashing as above we talked about happens inside python? then this is quite interesting, the thing is we dont need to implement everything manually rather on writing:
+
+my_dict[key] = value
+
+Then inside python all these opearation are done like:
+
+. Hash calculation
+. Index calculation
+. Storage
+. Collision handling
+
+- so by simply using the concepts of dictionaries and sets all of this can be done.
+
