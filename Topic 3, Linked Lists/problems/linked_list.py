@@ -310,27 +310,221 @@
 
 
 ## Q: Problem: Merge the two Sorted Lists
+## 1
+# class Node:
+#   def __init__(self, data):
+#     self.data = data
+#     self.next = None
+
+# def merge(r, p):
+#   curr = r
+#   while curr.next:
+#     curr = curr.next
+#   curr.next = p
+#   return r
+
+# r = Node(1)
+# r.next = Node(5)
+# r.next.next = Node(9)
+
+# p = Node(3)
+# p.next = Node(7)
+# p.next.next = Node(11)
+
+# res = merge(r, p)
+# while res:
+#   print(res.data)
+#   res = res.next
+
+## 2
+# class Node:
+#   def __init__(self, data):
+#     self.data = data
+#     self.next = None
+
+# def merge(r, p):
+#   fake = Node(-1)
+#   tail = fake
+#   while r and p:
+#     if r.data < p.data:
+#       tail.next = r
+#       r = r.next
+#     else:
+#       tail.next = p
+#       p = p.next
+#     tail = tail.next
+  
+#   if r:
+#     tail.next = r
+#   if p:
+#     tail.next = p
+#   return fake.next
+
+# r = Node(1)
+# r.next = Node(5)
+# r.next.next = Node(9)
+
+# p = Node(3)
+# p.next = Node(7)
+# p.next.next = Node(11)
+
+# res = merge(r, p)
+# while res:
+#   print(res.data)
+#   res = res.next
+
+
+## Q: Problem: Count number of nodes in a linked list:
+## 1
+# class Node:
+#   def __init__(self, data):
+#     self.data = data
+#     self.next = None
+
+# def num_count(head):
+#   count = 0
+#   curr = head
+#   while curr:
+#     if curr == head:
+#       count += 1
+#     count = curr.next 
+#   return count
+
+# head = Node(1)
+# head.next = Node(2)
+# head.next.next = Node(3)
+# head.next.next.next = Node(4)
+# head.next.next.next.next = Node(5)
+
+# res = num_count(head)
+# while res:
+#   print(res.data)
+#   res = res.next
+  
+## 2
+# class Node:
+#   def __init__(self, data):
+#     self.data = data
+#     self.next = None
+
+# def num_count(head):
+#   count = 0
+#   curr = head
+  
+#   while curr:
+#     count += 1
+#     curr = curr.next
+#   return count
+
+# head = Node(5)
+# head.next = Node(6)
+# head.next.next = Node(7)
+# head.next.next.next = Node(8)
+# head.next.next.next.next = Node(9)
+
+# res = num_count(head)
+# print(res)
+
+
+## Q: Problem: Reverse Linked List in Pairs
+## 1
+# class Node:
+#   def __init__(self, data):
+#     self.data = data
+#     self.next = None
+
+# def reverse(head):
+#     curr = head
+#     prev = curr
+    
+#     while prev and curr.next:
+#       test = curr.data
+#       curr.data = curr.next.data
+#       curr.next.data = test
+#       curr = curr.next.next
+#     return head
+
+# head = Node(2)
+# head.next = Node(3)
+# head.next.next = Node(4)
+# head.next.next.next = Node(6)
+# head.next.next.next.next = Node(7)
+
+# res = reverse(head)
+# while res:
+#   print(res.data)
+#   res = res.next
+
+## 2
+# class Node:
+#   def __init__(self, data):
+#     self.data = data
+#     self.next = None
+
+# def reverse(head):
+#   fake = Node(0)
+#   fake.next = head
+#   prev = fake
+  
+#   while fake.next and prev.next:
+#     first = fake.next
+#     second = first.prev.next
+#     first.next = second.next
+#     prev.next = first
+#     prev.next = second
+#     prev = first
+    
+#   return fake.next
+
+# head = Node(2)
+# head.next = Node(3)
+# head.next.next = Node(4)
+# head.next.next.next = Node(6)
+# head.next.next.next.next = Node(7)
+
+# res = reverse(head)
+# while res:
+#   print(res.data)
+#   res = res.next
+  
+## 3
 class Node:
   def __init__(self, data):
     self.data = data
     self.next = None
 
-def merge(r, p):
-  curr = r
-  while curr.next:
-    curr = curr.next
-  curr.next = p
-  return r
+def reverse(head):
+  fake = Node(0)
+  fake.next = head
+  prev = fake
+  
+  while prev.next and prev.next.next:
+    first = prev.next
+    second = first.next
+    first.next = second.next
+    second.next = first
+    prev.next = second
+    
+    prev = first
+  return fake.next
 
-r = Node(1)
-r.next = Node(5)
-r.next.next = Node(9)
+head = Node(2)
+head.next = Node(3)
+head.next.next = Node(4)
+head.next.next.next = Node(5)
+head.next.next.next.next = Node(6)
 
-p = Node(3)
-p.next = Node(7)
-p.next.next = Node(11)
-
-res = merge(r, p)
+res = reverse(head)
 while res:
-  print(res.data)
-  res = res.next
+ print(res.data)
+ res = res.next
+
+
+  
+  
+    
+
+
+      
+        
+  
