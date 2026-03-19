@@ -57,3 +57,35 @@ a line of persons present anywhere like on road, shop, outside the atm, bank, cl
 . front() -> this operation means to see the first present element
 
 - code example of queue:
+queue = []
+queue.append(5)
+queue.append(10)
+. now here this way of addition for exam of the two numbers in the list named queued is commonly called enqueueing, menas addition of the new values inside the list/queue.
+
+queue.pop(0)
+. now here this above code line is removing the number present at the index 0, and this way of value removal in the queue is called as dequeueing.
+
+# The Imp Use cases of Stack and Queue:
+- The use of Stack is common:
+. In Function calls -> in the call of stack is used,
+. In Undo/Redo operations,
+. In the analyis/evaluation of the expression,
+. And in the process of backtracking -> which is related to the depth first search (DFS).
+
+- The use of Queue is common:
+. In the scheduling of the task,
+. In the Breadth First Search (BFS),
+. And also in the processes of handling the requests.
+
+# What is Monotonic Stack?
+The concept of a monotonic tack tells its a kind of stack in which the present elements are placed in the specific order and these ordes are:
+. Increasing stack,
+. Decreasing stack
+
+1. Increasing Stack:
+. The increasing stack is the type of stack which keeps the present smallest elements at the bottom point.
+. Also these are used in the cases of finding the next smaller element.
+
+2. Decreasing Stack:
+. The decreasing stack is the type of stack which keeps the present largest elements at the bottom point.
+. And these are used in the cases of finding the next greater element.
