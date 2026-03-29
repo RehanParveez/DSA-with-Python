@@ -239,15 +239,84 @@
 
 ## Q: Problem: Min Stack check
 ## 1
+# class MinStack:
+#   def __init__(self):
+#     self.check = []
+#   def push(self, v):
+#     self.check.append(v)
+#   def pop(self):
+#     self.check.pop()
+#   def Min(self):
+#     return min(self.check)
+
+# obj = MinStack()
+# obj.push(6)
+# obj.push(7)
+# print(obj.Min())   
+
+# obj.push(4)
+# obj.push(3)
+# print(obj.Min())   
+
+# obj.pop()
+# print(obj.Min())
+
+## 2
+# class MinStack:
+#   def __init__(self):
+#     self.check = []
+#     self.min_val = 0 
+
+#   def push(self, v):
+#     if self.min_val:
+#       if self.min_val == v:
+#        self.check.append(v)
+#        self.min_val = v
+#     else:
+#       if v < self.min_val:
+#         self.min_val = v
+        
+#   def pop(self):
+#         self.check.pop()
+#   def Min(self):
+#         return self.min_val
+
+# obj = MinStack()
+# obj.push(6)
+# obj.push(7)
+# print(obj.Min())   
+
+# obj.push(4)
+# obj.push(3)
+# print(obj.Min())   
+
+# obj.pop()
+# print(obj.Min())
+
+## 3
 class MinStack:
   def __init__(self):
     self.check = []
-  def push(self, v):
-    self.check.append(v)
+    self.min_check = []
+
+  def push(self, x):
+    self.check.append(x)
+
+    if len(self.min_check) == 0:
+      self.min_check.append(x)
+    else:
+      current_min = self.min_check[-1]
+      if x <= current_min:
+        self.min_check.append(x)
+
   def pop(self):
-    self.check.pop()
+    removed = self.check.pop()
+    if len(self.min_check) > 0:
+      if removed == self.min_check[-1]:
+        self.min_check.pop()
+
   def Min(self):
-    return min(self.check)
+    return self.min_check[-1]
 
 obj = MinStack()
 obj.push(6)
@@ -260,6 +329,9 @@ print(obj.Min())
 
 obj.pop()
 print(obj.Min())
+
+
+
 
 
     
